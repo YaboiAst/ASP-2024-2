@@ -1,8 +1,8 @@
 package ExemploSlide;
 
 public class Proxy implements Subject {
-    private SubjectVerdadeiro subject;
-    public Proxy(SubjectVerdadeiro subject) {
+    private RealSubject subject;
+    public Proxy(RealSubject subject) {
         this.subject = subject;
     }
     @Override

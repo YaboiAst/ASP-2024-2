@@ -1,7 +1,7 @@
 import ProxyPattern.*;
 import Base.Services.BaseRealService;
 
-public class ExampleService {
+public class Exemplo {
     public static void main(String[] args) {
         // Instantiate base service
         BaseRealService service = new BaseRealService();
