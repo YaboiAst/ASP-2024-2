@@ -56,7 +56,9 @@ public class CachingProxy implements BasicServiceInterface {
             cache = realService.paramReturnOperation(info);
             AddToCache(info, cache);
         }
-        else  System.out.println("Cache hit!");
+        else {
+            System.out.println("Cache hit!\n" + cache);
+        }
 
         return cache;
     }

@@ -21,7 +21,7 @@ public class ExampleService {
         baseProxy.paramOperation("INFO");
         baseProxy.returnOperation();
         baseProxy.paramReturnOperation("INFO");
-        System.out.println("\n\n");
+        System.out.println("\n------------------------------------------------\n");
 
         // TESTING CACHING PROXY
         System.out.println("Making a request for Caching Proxy...");
@@ -30,7 +30,7 @@ public class ExampleService {
         cachingProxy.returnOperation();
         cachingProxy.paramReturnOperation("INFO");
         cachingProxy.paramReturnOperation("INFO");
-        System.out.println("\n\n");
+        System.out.println("\n------------------------------------------------\n");
 
         // TESTING LOGGING PROXY
         System.out.println("Making a request for Logging Proxy...");
@@ -39,7 +39,7 @@ public class ExampleService {
         loggingProxy.returnOperation();
         loggingProxy.paramReturnOperation("INFO");
         loggingProxy.printLog();
-        System.out.println("\n\n");
+        System.out.println("\n------------------------------------------------\n");
 
         // TESTING PROTECTION PROXY
         System.out.println("Making a request for Protection Proxy...");
@@ -48,7 +48,7 @@ public class ExampleService {
         protectionProxy.paramOperation("11111111111");
         protectionProxy.returnOperation();
         protectionProxy.paramReturnOperation("INFO");
-        System.out.println("\n\n");
+        System.out.println("\n------------------------------------------------\n");
 
         // TESTING REMOTE PROXY
         System.out.println("Making a request for Remote Proxy...");
@@ -56,7 +56,7 @@ public class ExampleService {
         remoteProxy.paramOperation("INFO");
         remoteProxy.returnOperation();
         remoteProxy.paramReturnOperation("INFO");
-        System.out.println("\n\n");
+        System.out.println("\n------------------------------------------------\n");
 
         // TESTING SMART PROXY
         System.out.println("Making a request for Smart Proxy...");
@@ -64,7 +64,7 @@ public class ExampleService {
         smartProxy.paramOperation("INFO");
         smartProxy.returnOperation();
         smartProxy.paramReturnOperation("INFO");
-        System.out.println("\n\n");
+        System.out.println("\n------------------------------------------------\n");
 
         // TESTING SMART PROXY
         System.out.println("Making a request for Virtual Proxy...");
@@ -72,6 +72,6 @@ public class ExampleService {
         virtualProxy.paramOperation("INFO");
         virtualProxy.returnOperation();
         virtualProxy.paramReturnOperation("INFO");
-        System.out.println("\n\n");
+        System.out.println("\n------------------------------------------------\n");
     }
 }
