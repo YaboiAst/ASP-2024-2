@@ -18,19 +18,29 @@ public class RemoteProxy implements BasicServiceInterface {
 
     @Override
     public void operation() {
-        if (connectToServer()) realService.operation();
+        System.out.println("Remote Proxy Call");
+        if (connectToServer()) {
+            System.out.println("Connection Succesful");
+            realService.operation();
+        }
         else System.out.println("Connection Failed");
     }
 
     @Override
     public void paramOperation(String info) {
-        if (connectToServer()) realService.paramOperation(info);
+        System.out.println("Remote Proxy Call");
+        if (connectToServer()) {
+            System.out.println("Connection Succesful");
+            realService.paramOperation(info);
+        }
         else System.out.println("Connection Failed");
     }
 
     @Override
     public String returnOperation() {
+        System.out.println("Remote Proxy Call");
         if (connectToServer()) {
+            System.out.println("Connection Succesful");
             return realService.returnOperation();
         }
         else {
@@ -41,7 +51,9 @@ public class RemoteProxy implements BasicServiceInterface {
 
     @Override
     public String paramReturnOperation(String info) {
+        System.out.println("Remote Proxy Call");
         if (connectToServer()) {
+            System.out.println("Connection Succesful");
             return realService.paramReturnOperation(info);
         }
         else {

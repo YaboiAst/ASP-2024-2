@@ -17,13 +17,16 @@ public class ProtectionProxy implements BasicServiceInterface {
 
     @Override
     public void operation() {
+        System.out.println("Protection Proxy Call");
         realService.operation();
     }
 
     @Override
     public void paramOperation(String info) {
+        System.out.println("Protection Proxy Call");
         if (checkCredentials(info))
         {
+            System.out.println("Valid Credentials! Accessing real service");
             realService.paramOperation(info);
         }
         else
@@ -34,11 +37,13 @@ public class ProtectionProxy implements BasicServiceInterface {
 
     @Override
     public String returnOperation() {
+        System.out.println("Protection Proxy Call");
         return realService.returnOperation();
     }
 
     @Override
     public String paramReturnOperation(String info) {
+        System.out.println("Protection Proxy Call");
         return realService.paramReturnOperation(info);
     }
 }

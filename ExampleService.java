@@ -8,7 +8,7 @@ public class ExampleService {
 
         // Instantiate all proxys
         BaseProxy baseProxy = new BaseProxy(service);
-        VirtualProxy virtualProxy = new VirtualProxy(service);
+        VirtualProxy virtualProxy = new VirtualProxy();
         ProtectionProxy protectionProxy = new ProtectionProxy(service);
         RemoteProxy remoteProxy = new RemoteProxy(service);
         LoggingProxy loggingProxy = new LoggingProxy(service);
@@ -29,20 +29,23 @@ public class ExampleService {
         cachingProxy.paramOperation("INFO");
         cachingProxy.returnOperation();
         cachingProxy.paramReturnOperation("INFO");
+        cachingProxy.paramReturnOperation("INFO");
         System.out.println("\n\n");
 
-        // TESTING LOGGIN PROXY
+        // TESTING LOGGING PROXY
         System.out.println("Making a request for Logging Proxy...");
         loggingProxy.operation();
         loggingProxy.paramOperation("INFO");
         loggingProxy.returnOperation();
         loggingProxy.paramReturnOperation("INFO");
+        loggingProxy.printLog();
         System.out.println("\n\n");
 
         // TESTING PROTECTION PROXY
         System.out.println("Making a request for Protection Proxy...");
         protectionProxy.operation();
         protectionProxy.paramOperation("INFO");
+        protectionProxy.paramOperation("11111111111");
         protectionProxy.returnOperation();
         protectionProxy.paramReturnOperation("INFO");
         System.out.println("\n\n");

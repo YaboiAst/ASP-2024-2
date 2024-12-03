@@ -29,22 +29,26 @@ public class SmartProxy implements BasicServiceInterface {
 
     @Override
     public void operation() {
+        System.out.println("Smart Proxy Call");
         realService.operation();
     }
 
     @Override
     public void paramOperation(String info) {
+        System.out.println("Smart Proxy Call");
         clientsId.add(info);
         realService.paramOperation(info);
     }
 
     @Override
     public String returnOperation() {
+        System.out.println("Smart Proxy Call");
         return realService.returnOperation();
     }
 
     @Override
     public String paramReturnOperation(String info) {
+        System.out.println("Smart Proxy Call");
         clientsId.add(info);
         return realService.paramReturnOperation(info);
     }

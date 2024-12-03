@@ -17,7 +17,7 @@ public class LoggingProxy implements BasicServiceInterface {
         log = new ArrayList<>();
     }
 
-    private void AddLog(String info)
+    private void addLog(String info)
     {
         log.add(info);
     }
@@ -25,28 +25,39 @@ public class LoggingProxy implements BasicServiceInterface {
     {
         return new ArrayList<>(log);
     }
+    public void printLog()
+    {
+        for(String line : getLog())
+        {
+            System.out.println(line);
+        }
+    }
 
     @Override
     public void operation() {
-        AddLog("Used service operation at " + Date.from(Instant.now()));
+        System.out.println("Logging Proxy Call");
+        addLog("Used service operation at " + Date.from(Instant.now()));
         realService.operation();
     }
 
     @Override
     public void paramOperation(String info) {
-        AddLog("Used service paramOperation at " + Date.from(Instant.now()));
+        System.out.println("Logging Proxy Call");
+        addLog("Used service paramOperation at " + Date.from(Instant.now()));
         realService.paramOperation(info);
     }
 
     @Override
     public String returnOperation() {
-        AddLog("Used service returnOperation at " + Date.from(Instant.now()));
+        System.out.println("Logging Proxy Call");
+        addLog("Used service returnOperation at " + Date.from(Instant.now()));
         return realService.returnOperation();
     }
 
     @Override
     public String paramReturnOperation(String info) {
-        AddLog("Used service paramReturnOperation at " + Date.from(Instant.now()));
+        System.out.println("Logging Proxy Call");
+        addLog("Used service paramReturnOperation at " + Date.from(Instant.now()));
         return realService.paramReturnOperation(info);
     }
 }
