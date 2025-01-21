@@ -5,6 +5,8 @@ import ATA2.domain.model.ClientImpl;
 import ATA2.domain.model.PhoneEntryImpl;
 import ATA2.domain.dto.AddPhoneEntryDTO;
 
+import java.util.Optional;
+
 public class AddPhonePort {
     private IClientRepository repository;
 
@@ -14,9 +16,10 @@ public class AddPhonePort {
 
     public void execute(AddPhoneEntryDTO dto)
     {
-        ClientImpl client = repository.findById(dto.clientId);
-        if (client == null)
+        Optional<ClientImpl> clientQuery = repository.findById(dto.clientId);
+        if (clientQuery.isEmpty())
             throw new Error("Client not found");
+        ClientImpl client = clientQuery.get();
 
         PhoneEntryImpl newEntry= new PhoneEntryImpl(dto.phoneId, dto.phoneType, dto.phoneNumber);
         client.addPhoneEntry(newEntry);

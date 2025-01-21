@@ -4,6 +4,8 @@ import ATA2.adapters.IClientRepository;
 import ATA2.domain.model.ClientImpl;
 import ATA2.domain.dto.RemovePhoneEntryDTO;
 
+import java.util.Optional;
+
 public class RemovePhonePort {
     private IClientRepository repository;
 
@@ -13,10 +15,11 @@ public class RemovePhonePort {
 
     public void execute(RemovePhoneEntryDTO dto)
     {
-        ClientImpl client = repository.findById(dto.clientId);
-        if (client == null)
+        Optional<ClientImpl> clientQuery = repository.findById(dto.clientId);
+        if (clientQuery.isEmpty())
             throw new Error("Client not found");
 
+        ClientImpl client = clientQuery.get();
         client.removePhoneEntry(dto.phoneId);
 
         repository.save(client);
